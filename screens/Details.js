@@ -1,5 +1,12 @@
 import { Fragment } from 'react';
-import { FlatList, Image, SafeAreaView, StatusBar, View } from 'react-native';
+import {
+  FlatList,
+  Image,
+  SafeAreaView,
+  StatusBar,
+  View,
+  Text,
+} from 'react-native';
 import {
   CircleButton,
   RectButton,
@@ -69,6 +76,18 @@ const Details = ({ route, navigation }) => {
             <SubInfo />
             <View style={{ padding: SIZES.font }}>
               <DetailsDesc data={data} />
+
+              {data.bids.length > 0 && (
+                <Text
+                  style={{
+                    fontSize: SIZES.font,
+                    fontFamily: FONTS.semiBold,
+                    color: COLORS.primary,
+                  }}
+                >
+                  Current Bid
+                </Text>
+              )}
             </View>
           </Fragment>
         )}
